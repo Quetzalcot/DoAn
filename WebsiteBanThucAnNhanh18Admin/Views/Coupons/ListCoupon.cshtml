@@ -1,0 +1,152 @@
+﻿@model IEnumerable<WebsiteBanThucAnNhanh18Admin.Models.CouponModel>
+
+@{
+    ViewData["Title"] = "ListCoupon";
+}
+
+@*<h1>ListCoupon</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CouponId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CouponCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaxUsage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DiscountAmount)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CouponId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CouponCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaxUsage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiscountAmount)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.CouponId }) |
+               
+                @Html.ActionLink("Delete", "Delete", new { id = item.CouponId  })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+*@
+<h1>ListCoupon</h1>
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.CouponId)</th>
+            <th>@Html.DisplayNameFor(model => model.CouponCode)</th>
+            <th>@Html.DisplayNameFor(model => model.StartDate)</th>
+            <th>@Html.DisplayNameFor(model => model.EndDate)</th>
+            <th>@Html.DisplayNameFor(model => model.MaxUsage)</th>
+            <th>@Html.DisplayNameFor(model => model.DiscountAmount)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            @* <tr>
+                <td>@Html.DisplayFor(modelItem => item.CouponId)</td>
+                <td>@Html.DisplayFor(modelItem => item.CouponCode)</td>
+                <td>@Html.DisplayFor(modelItem => item.StartDate)</td>
+                <td>@Html.DisplayFor(modelItem => item.EndDate)</td>
+                <td>@Html.DisplayFor(modelItem => item.MaxUsage)</td>
+                <td>@string.Format("{0:#,0}", item.DiscountAmount)</td>
+        
+              
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.CouponId" style="color: #fff; background-color: #28a745; padding: 5px 10px; border-radius: 5px;">
+                        <i class="fas fa-edit"></i> Edit
+                    </a> |
+                    <a asp-action="Delete" asp-route-id="@item.CouponId" style="color: #fff; background-color: #dc3545; padding: 5px 10px; border-radius: 5px;">
+                        <i class="fas fa-trash-alt"></i> Delete
+                    </a>
+                </td>
+               
+            </tr> *@
+            @if (item.EndDate < DateTime.Now || item.StartDate > DateTime.Now || item.MaxUsage < 1)
+            {
+                <tr style="color:red">
+
+                    <td>@Html.DisplayFor(modelItem => item.CouponId)</td>
+                    <td>@Html.DisplayFor(modelItem => item.CouponCode)</td>
+                    <td>@Html.DisplayFor(modelItem => item.StartDate)</td>
+                    <td>@Html.DisplayFor(modelItem => item.EndDate)</td>
+                    <td>@Html.DisplayFor(modelItem => item.MaxUsage)</td>
+                    <td>@string.Format("{0:#,0}", item.DiscountAmount)</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.CouponId" style="color: #fff; background-color: #28a745; padding: 5px 10px; border-radius: 5px;">
+                            <i class="fas fa-edit"></i> Edit
+                        </a> |
+                        <a asp-action="Delete" asp-route-id="@item.CouponId" style="color: #fff; background-color: #dc3545; padding: 5px 10px; border-radius: 5px;">
+                            <i class="fas fa-trash-alt"></i> Delete
+                        </a>
+                    </td>
+
+                </tr>
+
+
+            }
+            else
+            {
+                <tr style="color:forestgreen">
+
+                    <td>@Html.DisplayFor(modelItem => item.CouponId)</td>
+                    <td>@Html.DisplayFor(modelItem => item.CouponCode)</td>
+                    <td>@Html.DisplayFor(modelItem => item.StartDate)</td>
+                    <td>@Html.DisplayFor(modelItem => item.EndDate)</td>
+                    <td>@Html.DisplayFor(modelItem => item.MaxUsage)</td>
+                    <td>@string.Format("{0:#,0}", item.DiscountAmount)</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.CouponId" style="color: #fff; background-color: #28a745; padding: 5px 10px; border-radius: 5px;">
+                            <i class="fas fa-edit"></i> Edit
+                        </a> |
+                        <a asp-action="Delete" asp-route-id="@item.CouponId" style="color: #fff; background-color: #dc3545; padding: 5px 10px; border-radius: 5px;">
+                            <i class="fas fa-trash-alt"></i> Delete
+                        </a>
+                    </td>
+
+                </tr>
+            }
+
+        }
+    </tbody>
+</table>

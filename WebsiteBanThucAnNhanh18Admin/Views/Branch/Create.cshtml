@@ -1,0 +1,63 @@
+﻿@model WebsiteBanThucAnNhanh18Admin.Models.BranchModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>BranchModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="BranchId" class="control-label"></label>
+                <input asp-for="BranchId" class="form-control" />
+                <span asp-validation-for="BranchId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BranchName" class="control-label"></label>
+                <input asp-for="BranchName" class="form-control" />
+                <span asp-validation-for="BranchName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address" class="control-label"></label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Phone" class="control-label"></label>
+                <input asp-for="Phone" class="form-control" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OpenHour" class="control-label"></label>
+                <input asp-for="OpenHour" class="form-control" />
+                <span asp-validation-for="OpenHour" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CloseHour" class="control-label"></label>
+                <input asp-for="CloseHour" class="form-control" />
+                <span asp-validation-for="CloseHour" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ggmap" class="control-label"></label>
+                <input asp-for="Ggmap" class="form-control" />
+                <span asp-validation-for="Ggmap" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="ListBranch">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

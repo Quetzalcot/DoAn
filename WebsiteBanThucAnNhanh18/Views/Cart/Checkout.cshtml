@@ -1,0 +1,167 @@
+﻿@using WebsiteBanThucAnNhanh18.Data;
+@model IEnumerable<WebsiteBanThucAnNhanh18.ViewModels.CartVM>
+@{
+	ViewData["Title"] = "Checkout";
+	ViewBag.Voucher = Convert.ToDecimal(TempData["Voucher"]);
+	ViewBag.VoucherState = TempData["VoucherState"];
+	string lastestOrid = ViewBag.LatestOrder;
+	string username = Context.User.Claims.FirstOrDefault(c => c.Type == "Username")?.Value;
+}
+}
+<!-- Single Page Header start -->
+<div class="container-fluid page-header py-5">
+	<h1 class="text-center text-white display-6">Checkout</h1>
+	<ol class="breadcrumb justify-content-center mb-0">
+		<li class="breadcrumb-item"><a href="#">Home</a></li>
+		<li class="breadcrumb-item"><a href="#">Pages</a></li>
+		<li class="breadcrumb-item active text-white">Checkout</li>
+	</ol>
+</div>
+<!-- Single Page Header End -->
+<!-- Checkout Page Start -->
+<div class="container-fluid py-5">
+	<div class="container py-5">
+		<h1 class="mb-4">Chi tiết háo đơn</h1>
+		<form asp-action="Checkout">
+			<div class="row g-5">
+				<form asp-action="Checkout" asp-controller="Cart" asp-route-vid=@TempData["VoucherID"]>
+					<div class="text-danger" asp-validation-summary="ModelOnly"></div>
+					<div class="col-md-12 col-lg-6 col-xl-7">
+						<div class="form-group delivery-info">
+							<label for="branch">Chọn chi nhánh:</label>
+							<select class="form-control" id="branch" name="MaCN">
+
+								@foreach (var branch in ViewData["CN"] as IEnumerable<Branch> ?? Enumerable.Empty<Branch>())
+								{
+										<option value=@branch.BranchId>@branch.BranchName (@branch.Address)</option>
+								}
+
+							</select>
+
+
+						</div>
+						<!--  new -->
+						<div class="form-item delivery-info">
+							<label class="form-label my-3">Người nhận hàng<sup>*</sup></label>
+							<input type="text" name="HoTen" class="form-control" value="@TempData["FullName"]" required>
+						</div>
+						<!--  new -->
+						<div class="form-item delivery-info">
+							<label class="form-label my-3">Địa chỉ nhận hàng<sup>*</sup></label>
+							<input type="text" name="DiaChi" class="form-control" value="@TempData["AddRess"]" required>
+						</div>
+
+
+						<div class="form-item delivery-info">
+							<label class="form-label my-3">Điện thoại<sup>*</sup></label>
+							<input type="text" name="DienThoai" class="form-control" value="@TempData["Phone"]" required>
+						</div>
+						<div class="form-item mt-3">
+							<textarea name="GhiChu" class="form-control" spellcheck="false" cols="30" rows="11" placeholder="Ghi chú"></textarea>
+						</div>
+						<!--  new -->
+						<div class="form-item my-3">
+							<label class="form-label">Cập nhật thông tin:</label>
+
+							<label class="switch">
+								<input type="checkbox" name="CapNhat" value="true">
+								<span class="form-check-label"></span>
+							</label>
+						</div>
+						<!--  new -->
+						<div style="margin: 20px;">
+							<h2>Lựa chọn phương thức thanh toán</h2>
+							<label style="display: block; margin-bottom: 10px;">
+								<input type="radio" name="ThanhToan" value="COD" checked onclick="document.getElementById('qr-code-section').style.display='none'">
+								Thanh toán khi nhận hàng(COD)
+							</label>
+							<label style="display: block; margin-bottom: 10px;">
+								<input type="radio" name="ThanhToan" value="QR" onclick="document.getElementById('qr-code-section').style.display='block'">
+								Quyét mã QR
+							</label>
+						</div>
+
+						<div id="qr-code-section" style="display: none; margin-top: 20px;">
+							<img id="qr-code" src="/image/orther/qr.webp" alt="QR Code" style="width: 200px; height: 200px;">
+							<p id="qr-code-message" style="margin-top: 10px; font-size: 25px;background-color: yellow;color: red; font-weight: bold;"> Quyét mã và thanh toán theo cú pháp: @username - @lastestOrid  </p>
+						</div>
+
+
+						<input type="hidden" name="ThanhTien" id="thanhtien" value=@Model.Sum(p=>p.ThanhTien)>
+						<button type="submit" class="btn border-secondary text-uppercase text-primary w-100 mt-2">Đặt hàng</button>
+					</div>
+				</form>
+				<div class="col-md-12 col-lg-6 col-xl-5">
+					<div class="table-responsive">
+						<table class="table">
+							<thead>
+								<tr>
+									<th scope="col">Products</th>
+									<th scope="col">Name</th>
+									<th scope="col">Price</th>
+									<th scope="col">Quantity</th>
+									<th scope="col">Total</th>
+								</tr>
+							</thead>
+							<tbody>
+								@foreach (var item in Model)
+								{
+										<tr>
+											<th scope="row">
+												<div class="d-flex align-items-center mt-2">
+													<img src="@item.HinhAnh" class="img-fluid rounded-circle" style="width: 90px; height: 90px;" alt="@item.TenDa">
+												</div>
+											</th>
+											<td class="py-5">@item.TenDa</td>
+											<td class="py-5">@string.Format("{0:#,0}", item.Gia)</td>
+											<td class="py-5">@item.SoLuong</td>
+											<td class="py-5">@string.Format("{0:#,0}", item.ThanhTien)</td>
+										</tr>
+								}
+								<tr>
+									<th scope="row">
+									</th>
+									<td class="py-5">
+										<p class="mb-0 text-dark py-3">Voucher đã giảm</p>
+									</td>
+									<td class="py-5"></td>
+									<td class="py-5"></td>
+									<td class="py-5">
+										<div class="py-3 border-bottom border-top">
+											<p class="mb-0 text-dark">@string.Format("{0:#,0}",@ViewBag.Voucher??0) VND </p>
+										</div>
+									</td>
+								</tr>
+
+
+
+
+								<tr>
+									<th scope="row">
+									</th>
+									<td class="py-5"></td>
+									<td class="py-5"></td>
+
+
+
+									<td class="py-5">
+										<p class="mb-0 text-dark py-3">Tổng tiền</p>
+									</td>
+
+									<td class="py-5">
+										<div class="py-3 border-bottom border-top">
+											<p class="mb-0 text-dark">@string.Format("{0:#,0}", @Math.Max(0, @Model.Sum(p=>p.ThanhTien) - @ViewBag.Voucher??0)) VND </p>
+										</div>
+									</td>
+								</tr>
+
+							</tbody>
+						</table>
+					</div>
+
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+<!-- Checkout Page End -->

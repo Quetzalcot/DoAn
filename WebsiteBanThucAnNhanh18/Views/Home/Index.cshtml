@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    TempData["Voucher"] = "0";
+    TempData["VoucherState"] = "";
+}
+
+<section class="section-banner-home">
+    <input type="radio" id="slide1" name="carousel-radio" checked>
+    <input type="radio" id="slide2" name="carousel-radio">
+    <input type="radio" id="slide3" name="carousel-radio">
+
+    <div class="carousel-slide">
+        <label for="slide3" class="prev" style="position: absolute; top: 50%; transform: translateY(-50%); left: 0; cursor: pointer;">&#10094;</label>
+        <label for="slide2" class="next" style="position: absolute; top: 50%; transform: translateY(-50%); right: 0; cursor: pointer;">&#10095;</label>
+        @*<img class="hidden-md-up" src="https://cdn-pe-uae-ordering.azureedge.net/media/r41ilx34/popeyes-website-front-banner.jpg" alt=" Combo">*@
+        <img class="hidden-sm-down" src="https://cdn-pe-uae-ordering.azureedge.net/media/r41ilx34/popeyes-website-front-banner.jpg" alt=" Combo">
+    </div>
+    
+</section>
+<section class="section-step-order-online">
+    <div itemscope="" itemtype="http://schema.org/Article" class="container  d-flex justify-content-between">
+         @if (User.Identity.IsAuthenticated)
+        {
+            <div class="d-flex justify-content-center">
+                <a asp-action="Index" asp-controller="DoAn" class="btn btn-primary btn-lg" style="font-family: 'Raleway', sans-serif; font-size: 1000%; padding: 20px 40px; font-weight: bold; color: red;">ĐẶT MÓN NGAY!</a>
+            </div>
+        }
+        else
+        {
+            <a asp-action="DangKy" asp-controller="KhachHang" class="btn btn-primary btn-lg" style="font-family: 'Raleway' , sans-serif;font-size: 400%; padding: 20px 40px;font-weight: bold; color: red;">ĐĂNG KÝ</a>
+            <a asp-action="DangNhap" asp-controller="KhachHang" class="btn btn-primary btn-lg" style="font-family: 'Raleway' , sans-serif;font-size: 400%; padding: 20px 40px;font-weight: bold; color: red;">ĐĂNG NHẬP</a>
+            <a asp-action="Index" asp-controller="DoAn" class="btn btn-primary btn-lg" style="font-family: 'Raleway' , sans-serif;font-size: 400%; padding: 20px 40px;font-weight: bold; color: red;">ĐẶT MÓN</a>
+          
+        }
+       
+    </div>
+</section>

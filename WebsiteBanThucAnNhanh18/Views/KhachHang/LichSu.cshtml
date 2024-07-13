@@ -1,0 +1,74 @@
+﻿@model IEnumerable<WebsiteBanThucAnNhanh18.Data.Order>
+@{
+    ViewData["Title"] = "Lịch sử đặt hàng";
+}
+
+
+<div class="container mt-5" >
+    <div class="row justify-content-center">
+        <div class="col-md-10" >
+            <div class="table-responsive" style="margin-top: 200px;">
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Mã đơn hàng</th>
+                            <th scope="col">Chi nhánh</th>
+                            <th scope="col">Loại thanh toán</th>
+                            <th scope="col">Tình trạng</th>
+                            <th scope="col">Thành tiền</th>
+                            <th scope="col">Chi tiết</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.OrderId</td>
+                                <td>@ViewBag.BranchNames[item.OrderId]</td>
+                                <td>@item.Payment</td>
+
+                                <td>
+                                    <span style="color:
+                                      @switch(item.Status)
+                                      {
+                                      case "pending":
+                                                        <text>gray</text>
+                                        ; /* Màu xám */
+                                                        break;
+                                                    case "processing":
+                                                        <text>#007bff</text>
+                                        ; /* Màu xanh dương */
+                                                        break;
+                                                    case "canceled":
+                                                        <text>#dc3545</text>
+                                        ; /* Màu đỏ */
+                                                        break;
+                                                    case "delivering":
+                                                        <text>#ffc107</text>
+                                        ; /* Màu vàng cam */
+                                                        break;
+                                                    case "paid":
+                                                        <text>#28a745</text>
+                                        ; /* Màu xanh lá */
+                                                        break;
+                                                    default:
+                                                        <text>black</text>
+                                        ; /* Màu mặc định */
+                                                        break;
+                                                }">
+                                        @item.Status
+                                    </span>
+                                </td>
+
+                                <td>@item.Total VND</td>
+                                <td>
+                                    <a href="@Url.Action("Detail","KhachHang", new { id = item.OrderId })" class="btn btn-primary">Xem thêm</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\WebsiteBanThucAnNhanh18.props" />
+</Project>

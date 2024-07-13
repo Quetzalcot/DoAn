@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\WebsiteBanThucAnNhanh18Admin.props" />
+</Project>

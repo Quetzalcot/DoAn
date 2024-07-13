@@ -1,0 +1,105 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = WebsiteBanThucAnNhanh18
+build_property.RootNamespace = WebsiteBanThucAnNhanh18
+build_property.ProjectDir = D:\1OU-20230530T133709Z-001\1OU\3.HKII\LTCSDL\CK\DoAn\WebsiteBanThucAnNhanh18\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\1OU-20230530T133709Z-001\1OU\3.HKII\LTCSDL\CK\DoAn\WebsiteBanThucAnNhanh18
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/1OU-20230530T133709Z-001/1OU/3.HKII/LTCSDL/CK/DoAn/WebsiteBanThucAnNhanh18/Views/Branch/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmNoXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/1OU-20230530T133709Z-001/1OU/3.HKII/LTCSDL/CK/DoAn/WebsiteBanThucAnNhanh18/Views/Cart/Checkout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxDaGVja291dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/1OU-20230530T133709Z-001/1OU/3.HKII/LTCSDL/CK/DoAn/WebsiteBanThucAnNhanh18/Views/Cart/ListCart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxMaXN0Q2FydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/1OU-20230530T133709Z-001/1OU/3.HKII/LTCSDL/CK/DoAn/WebsiteBanThucAnNhanh18/Views/Cart/Success.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxTdWNjZXNzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/1OU-20230530T133709Z-001/1OU/3.HKII/LTCSDL/CK/DoAn/WebsiteBanThucAnNhanh18/Views/ChiNhanh/Branch.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hpTmhhbmhcQnJhbmNoLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/1OU-20230530T133709Z-001/1OU/3.HKII/LTCSDL/CK/DoAn/WebsiteBanThucAnNhanh18/Views/DoAn/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9BblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/1OU-20230530T133709Z-001/1OU/3.HKII/LTCSDL/CK/DoAn/WebsiteBanThucAnNhanh18/Views/DoAn/Search.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9BblxTZWFyY2guY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/1OU-20230530T133709Z-001/1OU/3.HKII/LTCSDL/CK/DoAn/WebsiteBanThucAnNhanh18/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/1OU-20230530T133709Z-001/1OU/3.HKII/LTCSDL/CK/DoAn/WebsiteBanThucAnNhanh18/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/1OU-20230530T133709Z-001/1OU/3.HKII/LTCSDL/CK/DoAn/WebsiteBanThucAnNhanh18/Views/KhachHang/DangKy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2hhY2hIYW5nXERhbmdLeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/1OU-20230530T133709Z-001/1OU/3.HKII/LTCSDL/CK/DoAn/WebsiteBanThucAnNhanh18/Views/KhachHang/DangNhap.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2hhY2hIYW5nXERhbmdOaGFwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/1OU-20230530T133709Z-001/1OU/3.HKII/LTCSDL/CK/DoAn/WebsiteBanThucAnNhanh18/Views/KhachHang/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2hhY2hIYW5nXERldGFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/1OU-20230530T133709Z-001/1OU/3.HKII/LTCSDL/CK/DoAn/WebsiteBanThucAnNhanh18/Views/KhachHang/LichSu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2hhY2hIYW5nXExpY2hTdS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/1OU-20230530T133709Z-001/1OU/3.HKII/LTCSDL/CK/DoAn/WebsiteBanThucAnNhanh18/Views/KhachHang/Profile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2hhY2hIYW5nXFByb2ZpbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/1OU-20230530T133709Z-001/1OU/3.HKII/LTCSDL/CK/DoAn/WebsiteBanThucAnNhanh18/Views/Shared/Components/MenuCategory/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTWVudUNhdGVnb3J5XERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/1OU-20230530T133709Z-001/1OU/3.HKII/LTCSDL/CK/DoAn/WebsiteBanThucAnNhanh18/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/1OU-20230530T133709Z-001/1OU/3.HKII/LTCSDL/CK/DoAn/WebsiteBanThucAnNhanh18/Views/Shared/_Footer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Gb290ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/1OU-20230530T133709Z-001/1OU/3.HKII/LTCSDL/CK/DoAn/WebsiteBanThucAnNhanh18/Views/Shared/_LayoutCustomer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRDdXN0b21lci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/1OU-20230530T133709Z-001/1OU/3.HKII/LTCSDL/CK/DoAn/WebsiteBanThucAnNhanh18/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/1OU-20230530T133709Z-001/1OU/3.HKII/LTCSDL/CK/DoAn/WebsiteBanThucAnNhanh18/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/1OU-20230530T133709Z-001/1OU/3.HKII/LTCSDL/CK/DoAn/WebsiteBanThucAnNhanh18/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/1OU-20230530T133709Z-001/1OU/3.HKII/LTCSDL/CK/DoAn/WebsiteBanThucAnNhanh18/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-fd7x2lz796

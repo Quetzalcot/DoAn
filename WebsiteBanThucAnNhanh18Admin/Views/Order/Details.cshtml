@@ -1,0 +1,113 @@
+﻿@model WebsiteBanThucAnNhanh18Admin.Models.OrderDetailsViewModel
+
+@{
+    ViewData["Title"] = "Order Details";
+}
+
+<h1>Order Details</h1>
+
+<div>
+    
+    
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Order.OrderId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Order.OrderId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Order.OrderDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Order.OrderDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Order.Status)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Order.Status)
+       
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Order.Payment)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Order.Payment)
+        </dd>
+    </dl>
+</div>
+
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderDetails[0].FoodId)
+            </th>
+            <th>
+                Food Name
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderDetails[0].Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderDetails[0].Price)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.OrderDetails)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FoodId)
+                </td>
+                <td>
+                    @{
+                        var food = Model.Foods.FirstOrDefault(f => f.FoodId == item.FoodId);
+                        if (food != null)
+                        {
+                            @Html.DisplayFor(modelItem => food.FoodName)
+                        }
+                    }
+                </td>
+                
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Order.Total)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Order.Total)
+        </dd>
+        @if (Model.Order.Coupon != null)
+        {
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Order.Coupon.DiscountAmount)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Order.Coupon.DiscountAmount)
+            </dd>
+            <dt class="col-sm-2">
+                Total After Discount
+            </dt>
+            <dd class="col-sm-10">
+                @(Model.Order.Total - Model.Order.Coupon.DiscountAmount )
+            </dd>
+        }
+    </dl>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="ListOrder">Back to Order List</a>
+</div>

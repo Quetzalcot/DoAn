@@ -1,0 +1,13 @@
+﻿@model IEnumerable<WebsiteBanThucAnNhanh18.ViewModels.BranchVM>
+@foreach (var item in Model)
+{
+    <div class="widget-runway-card-caption-wrapper">
+        <div class="widget-runway-card-caption">
+            <h2>@item.BranchName</h2>
+            <label>Địa chỉ: </label><span>@item.BranchName</span><br>
+            <label>Điện thoại:</label><span>@item.Phone</span><br>
+            <span><p>(Giờ mở cửa: @item.OpenHour -&nbsp; @item.CloseHour)</p></span>
+        </div>
+    </div>
+}
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62702.97964477542!2d106.60559964696569!3d10.816192386205005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175291f2abf1eff%3A0x456b68579a1fd8f1!2zR8OgIFLDoW4gUG9wZXllcw!5e0!3m2!1svi!2sus!4v1714830927729!5m2!1svi!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>

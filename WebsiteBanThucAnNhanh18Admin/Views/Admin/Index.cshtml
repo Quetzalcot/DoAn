@@ -1,0 +1,80 @@
+﻿@model IEnumerable<WebsiteBanThucAnNhanh18Admin.Data.ManagerAccount>
+
+@{
+    ViewData["Title"] = "Tài khoản quản lý";
+}
+
+<h1>Tài Khoản Quản Lý</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UserId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Username)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fullname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RoleId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Randomkey)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fullname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoleId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Randomkey)
+            </td>
+                <a asp-action="Edit" asp-route-id="@item.UserId" style="color: #fff; background-color: #28a745; padding: 5px 10px; border-radius: 5px;">
+                    <i class="fas fa-edit"></i> Edit
+                </a> |
+                <a asp-action="Delete" asp-route-id="@item.UserId" style="color: #fff; background-color: #dc3545; padding: 5px 10px; border-radius: 5px;">
+                    <i class="fas fa-trash-alt"></i> Delete
+                </a>
+           
+        </tr>
+}
+    </tbody>
+</table>

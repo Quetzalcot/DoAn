@@ -1,0 +1,39 @@
+﻿@model WebsiteBanThucAnNhanh18Admin.Models.LoginVM
+@{
+    ViewData["Title"] = "Đăng Nhập";
+}
+<div class="container-fluid py-5">
+	<div class="container py-5">
+		<h1 class="mb-4">Đăng nhập</h1>
+		@if (TempData["RegisterSuccess"] != null)
+		{
+			<h3 style="color: forestgreen">@TempData["RegisterSuccess"]</h3>
+		}
+        <form asp-action="DangNhap" asp-route-returnurl="@ViewBag.ReturnUrl">
+            <div class="text-danger" asp-validation-summary="All"></div>
+            <div class="container">
+                <div class="row mb-3">
+                    <div class="col-md-6 mb-3">
+                        <div class="form-group">
+                            <label asp-for="@Model.UserName" class="form-label" style="font-weight: bold; margin-bottom: 0.5rem;">Tên đăng nhập<sup style="color: red;">*</sup></label>
+                            <input asp-for="@Model.UserName" class="form-control" style="padding: 0.75rem; border-radius: 0.25rem;">
+                            <span asp-validation-for="@Model.UserName" class="text-danger" style="font-size: 0.875rem;"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="form-group">
+                            <label asp-for="@Model.Password" class="form-label" style="font-weight: bold; margin-bottom: 0.5rem;">Mật khẩu<sup style="color: red;">*</sup></label>
+                            <input asp-for="@Model.Password" class="form-control" style="padding: 0.75rem; border-radius: 0.25rem;">
+                            <span asp-validation-for="@Model.Password" class="text-danger" style="font-size: 0.875rem;"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary" style="padding: 1rem 2rem; text-transform: uppercase; font-weight: bold;">Đăng nhập</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+	</div>
+</div>

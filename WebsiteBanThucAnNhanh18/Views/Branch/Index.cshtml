@@ -1,0 +1,42 @@
+﻿@model IEnumerable<WebsiteBanThucAnNhanh18.Data.Branch>
+@{
+    ViewBag.Title = "Danh sách chi nhánh";
+}
+
+<div style="height: 100px;"></div>
+<h2 style="text-align: center; font-family: Arial, sans-serif;">Danh sách chi nhánh</h2>
+
+<form asp-action="Branch" asp-controller="Branch" method="post" style="text-align: center; margin-bottom: 20px;">
+    <label for="branch" style="font-family: Arial, sans-serif; margin-right: 10px;">Chọn chi nhánh:</label>
+    <select name="branchId" id="branch" style="padding: 5px; border-radius: 5px; border: 1px solid #ccc;">
+        @foreach (var branch in Model)
+        {
+            <option value="@branch.BranchId">@branch.BranchName</option>
+        }
+    </select>
+    <button type="submit" class="btn btn-primary" >Xem bản đồ</button>
+</form>
+
+@if (ViewBag.SelectedBranch != null)
+{
+    <h3 style="text-align: center; font-family: Arial, sans-serif;">Vị trí của chi nhánh: @ViewBag.SelectedBranch.BranchName</h3>
+    <div style="display: flex; justify-content: center; margin-top: 20px;">
+        @Html.Raw(ViewBag.SelectedBranch.Ggmap)
+    </div>
+}
+<div style="display: flex; justify-content: space-around;">
+    <div style="flex-basis: 45%; padding: 20px; border: 1px solid #ccc; border-radius: 5px;">      
+        <ul style="list-style-type: none; padding: 0;">
+            @foreach (var branch in Model)
+            {
+                <li style="margin-bottom: 20px; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                    <h3>@branch.BranchName</h3>
+                    <p style="margin-bottom: 5px;">Địa chỉ: @branch.Address</p>
+                    <p style="margin-bottom: 5px;">Hotline: @branch.Phone</p>
+                    <p style="margin-bottom: 5px;">Thời gian: @branch.OpenHour - @branch.CloseHour</p>
+                   
+                </li>
+            }
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,164 @@
+﻿@model WebsiteBanThucAnNhanh18Admin.Models.PagesModel
+@using System.Collections.Generic
+@using WebsiteBanThucAnNhanh18Admin.Models
+@using System.Web.Mvc
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Danh sách khách hàng</h1>
+@if (ViewBag.Search == null)
+{
+    ViewBag.Search = "Nhập username...";
+}
+
+<a asp-action="Create" asp-controller="Customers" class="btn btn-primary">
+    <i class="fas fa-plus"></i> Create New Customer
+</a>
+<h3></h3>
+<form asp-action="Search" asp-controller="Customers" method="GET" class="d-inline-block">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="@ViewBag.Search" name="username">
+        <div class="input-group-append">
+            <button class="btn btn-primary" type="submit">Tìm kiếm</button>
+        </div>
+    </div>
+</form>
+
+<form asp-action="SearchID" asp-controller="Customers" method="GET" class="d-inline-block ml-auto">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Nhập ID" name="id">
+        <div class="input-group-append">
+            <button class="btn btn-primary" type="submit">Tìm kiếm ID</button>
+        </div>
+    </div>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Accounts.First().UserId)</th>
+            <th>@Html.DisplayNameFor(model => model.Accounts.First().Username)</th>
+            <th>@Html.DisplayNameFor(model => model.Accounts.First().Fullname)</th>
+            <th>@Html.DisplayNameFor(model => model.Accounts.First().Email)</th>
+            <th>@Html.DisplayNameFor(model => model.Accounts.First().Phone)</th>
+            <th>@Html.DisplayNameFor(model => model.Accounts.First().Address)</th>
+            <th>@Html.DisplayNameFor(model => model.Accounts.First().Gender)</th>
+            <th>@Html.DisplayNameFor(model => model.Accounts.First().Bod)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        
+            @foreach (var item in Model.Accounts)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.UserId)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Username)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Fullname)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Phone)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Address)</td>
+                    <td>@(item.Gender == true ? "Nam" : "Nữ")</td>
+                    <td>@Html.DisplayFor(modelItem => item.Bod)</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.UserId" style="color: #fff; background-color: #28a745; padding: 5px 10px; border-radius: 5px;">
+                            <i class="fas fa-edit"></i> Edit
+                        </a> |
+                        <a asp-action="Delete" asp-route-id="@item.UserId" style="color: #fff; background-color: #dc3545; padding: 5px 10px; border-radius: 5px;">
+                            <i class="fas fa-trash-alt"></i> Delete
+                        </a>
+                    </td>
+                </tr>
+            }
+        
+        
+    </tbody>
+</table>
+
+<div>
+    <ul class="pagination">
+         
+            @for (int i = 1; i <= Model.TotalPages; i++)
+            {
+                <li class="page-item @(i == Model.CurrentPage ? "active" : "")">
+                    <a class="page-link" href="@Url.Action("Index", new { page = i, pageSize = Model.PageSize })">@i</a>
+                </li>
+            }
+        
+       
+    </ul>
+</div>
+@*<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UserId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Username)
+            </th>
+     
+            <th>
+                @Html.DisplayNameFor(model => model.Fullname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bod)
+            </th>
+        
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Username)
+            </td>
+     
+            <td>
+                @Html.DisplayFor(modelItem => item.Fullname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                    @(item.Gender == true ? "Nam" : "Nữ")
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bod)
+            </td>
+      
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.UserId" style="color: #fff; background-color: #28a745;  padding: 5px 10px; border-radius: 5px;">
+                        <i class="fas fa-edit"></i> Edit
+                    </a>
+                    |
+                    <a asp-action="Delete" asp-route-id="@item.UserId" style="color: #fff; background-color: #dc3545; padding: 5px 10px; border-radius: 5px;">
+                        <i class="fas fa-trash-alt"></i> Delete
+                    </a>
+                </td>
+        </tr>
+}
+    </tbody>
+</table>*@

@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    TempData["Voucher"] = "0";
+    TempData["VoucherState"] = "";
+}
+
+<section class="section-step-order-online">
+    <div itemscope="" itemtype="http://schema.org/Article" class="container  d-flex justify-content-between">
+        @if (User.Identity.IsAuthenticated)
+        {
+            
+        }
+        else
+        {
+            
+            <div class="d-flex justify-content-center" style="margin:0 auto; text-align:center">
+                <a asp-action="DangNhap" asp-controller="Admin" class="btn btn-primary btn-lg" style="font-family: 'Raleway' , sans-serif;font-size: 100%; padding: 20px 40px;font-weight: bold; color: red; text-align: center;">ĐĂNG NHẬP</a>
+            </div>
+        }
+
+    </div>
+</section>

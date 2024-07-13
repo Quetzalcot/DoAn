@@ -1,0 +1,111 @@
+﻿@model IEnumerable<WebsiteBanThucAnNhanh18Admin.Models.FoodsModel>
+
+@{
+    ViewData["Title"] = "ListFood";
+}
+
+<h1>ListFood</h1>
+@TempData["kq"]
+<p>
+
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
+</p>
+
+
+
+<form action="Search" method="GET">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Nhập tên món ăn..." name="foodName">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <button class="btn btn-primary" type="submit">Tìm kiếm</button>
+        </div>
+    </div>
+</form>
+<form action="SearchID" method="GET">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Nhập ID món ăn..." name="foodId">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <button class="btn btn-primary" type="submit">Tìm kiếm</button>
+        </div>
+    </div>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FoodId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FoodName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Discount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Picture)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Idx)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FoodId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FoodName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                    @string.Format("{0:#,0}", item.Price)
+            @*    @Html.DisplayFor(modelItem => item.Price)*@
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Discount)
+            </td>
+            <td>                  
+                    <img src=@("https://localhost:7224" + item.Picture) width="100" />               
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Idx)
+            </td>
+            
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.FoodId" style="color: #fff; background-color: #28a745; padding: 5px 10px; border-radius: 5px;">
+                        <i class="fas fa-edit"></i> Edit
+                    </a> |
+                    <a asp-action="Delete" asp-route-id="@item.FoodId" style="color: #fff; background-color: #dc3545; padding: 5px 10px; border-radius: 5px;">
+                        <i class="fas fa-trash-alt"></i> Delete
+                    </a>
+                </td>
+            
+        </tr>
+}
+    </tbody>
+</table>

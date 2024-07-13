@@ -1,0 +1,71 @@
+﻿@model IEnumerable<WebsiteBanThucAnNhanh18Admin.Models.BranchModel>
+@{
+    ViewData["Title"] = "Search";
+}
+<h1>Search</h1>
+<p>
+
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BranchId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BranchName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OpenHour)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CloseHour)
+            </th>
+            @* <th>
+                @Html.DisplayNameFor(model => model.Ggmap)
+            </th> *@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BranchId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BranchName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OpenHour)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CloseHour)
+            </td>
+           @*  <td>
+                @Html.DisplayFor(modelItem => item.Ggmap)
+            </td> *@
+                <a asp-action="Edit" asp-route-id="@item.BranchId" style="color: #fff; background-color: #28a745; padding: 5px 10px; border-radius: 5px;">
+                    <i class="fas fa-edit"></i> Edit
+                </a> |
+                <a asp-action="Delete" asp-route-id="@item.BranchId" style="color: #fff; background-color: #dc3545; padding: 5px 10px; border-radius: 5px;">
+                    <i class="fas fa-trash-alt"></i> Delete
+                </a>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,78 @@
+﻿@model IEnumerable<WebsiteBanThucAnNhanh18.ViewModels.MenuCategoryVM>
+<div class="col-lg-12">
+	<div class="mb-3">
+		<h4>Thực đơn</h4>
+		<ul class="list-unstyled fruite-categorie">
+			<li>
+				<div class="d-flex justify-content-between fruite-name">
+					<a asp-controller="DoAn" asp-action="Index" asp-route-loai=0><i class="fas fa-utensil-spoon" style="color: orange;"></i> Tất cả</a>
+					<span>(@Model.Select(p=>p.SoLuong).Sum())</span>
+				</div>
+			</li>
+			@foreach (var item in Model)
+			{
+				@switch (item.MaL)
+				{
+					case 1:
+						<li>
+							<div class="d-flex justify-content-between fruite-name">
+								<a asp-controller="DoAn" asp-action="Index" asp-route-loai ="@item.MaL"><i class="fas fa-drumstick-bite" style="color: orange;"></i> @item.TenL</a>
+								<span>(@item.SoLuong)</span>
+							</div>
+						</li>
+						break;
+					case 2:
+
+						<li>
+							<div class="d-flex justify-content-between fruite-name">
+								<a asp-controller="DoAn" asp-action="Index" asp-route-loai="@item.MaL"><i class="fas fa-utensils" style="color: orange;"></i> @item.TenL</a>
+								<span>(@item.SoLuong)</span>
+							</div>
+						</li>
+						break;
+					case 3:
+
+						<li>
+							<div class="d-flex justify-content-between fruite-name">
+								<a asp-controller="DoAn" asp-action="Index" asp-route-loai="@item.MaL"><i class="fas fa-hamburger" style="color: orange;"></i> @item.TenL</a>
+								<span>(@item.SoLuong)</span>
+							</div>
+						</li>
+						break;
+					case 4:
+						<li>
+							<div class="d-flex justify-content-between fruite-name">
+								<a asp-controller="DoAn" asp-action="Index" asp-route-loai="@item.MaL"><i class="fa-utensils" style="color: orange;"></i> @item.TenL</a>
+								<span>(@item.SoLuong)</span>
+							</div>
+						</li>
+						break;
+					case 5:
+						<li>
+							<div class="d-flex justify-content-between fruite-name">
+								<a asp-controller="DoAn" asp-action="Index" asp-route-loai="@item.MaL"><i class="fas fa-glass-whiskey" style="color: orange;"></i> @item.TenL</a>
+								<span>(@item.SoLuong)</span>
+							</div>
+						</li>
+						break;
+					case 6:
+					
+						<li>
+							<div class="d-flex justify-content-between fruite-name">
+								<a asp-controller="DoAn" asp-action="Index" asp-route-loai="@item.MaL"><i class="fas fa-flask" style="color: orange;"></i> @item.TenL</a>
+								<span>(@item.SoLuong)</span>
+							</div>
+						</li>
+						break;
+
+
+
+
+
+				}
+
+			}
+
+		</ul>
+	</div>
+</div>
