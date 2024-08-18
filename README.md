@@ -11,7 +11,7 @@ Cuối cùng, đồ án sẽ tập trung vào việc tạo ra một giao diện 
 
 - Cấu trúc database
 
-![Database](Pho/database.PNG)
+![Database](Pho/database.png)
 
 - Giao diện của trang web khách hàng được kế thừa từ [Codex](https://htmlcodex.com/vegetable-website-template/).
 - Dữ liệu các món ăn và hình ảnh được lấy từ [Popeyes Viet Nam](https://popeyes.vn/)
@@ -42,7 +42,7 @@ Lâm Quốc Huy:
 Bao giờ Header cũng có một thanh như sau
 
 
-![P](Pho/2.1.1.1.PNG)
+![P](Pho/2.1.1.1.png)
 Bao gồm:
 
 Logo Popeyes: ấn vào sẽ quay về trang Home.
@@ -59,7 +59,7 @@ Icon giỏ hàng: khi thêm món ăn vào giỏ hàng thì trên giỏ hàng s�
 
 Icon khách hàng: khi chưa đăng nhập ấn vào sẽ vào trang đăng nhập, khi đã đăng nhập ấn vào sẽ vào trang thông tin khách hàng.
 
-![P](Pho/2.1.1.2.PNG)
+![P](Pho/2.1.1.2.png)
 Sau khi đăng nhập thì sẽ có thêm 2 icon:
 
 Đăng xuất: đăng xuất khỏi tài khoản.
@@ -67,10 +67,10 @@ Sau khi đăng nhập thì sẽ có thêm 2 icon:
 Icon lịch sử: thể hiện lịch sử mua hàng
 
 Footer:
-![P](Pho/2.1.1.3.PNG)
+![P](Pho/2.1.1.3.png)
 
 ### 2.1.2 Trang Home
-![P](Pho/2.1.2.PNG)
+![P](Pho/2.1.2.png)
 
 Ban đầu nếu truy cập vào trang web ví dụ fastfood.com thì sẽ vào giao diện trang Home:
 
@@ -93,12 +93,12 @@ Ví dụ: Tại phần nhập email khách hàng cần nhập đúng như
 Tại phần số điện thoại cần nhập đúng định dạng số điện thoại tại Việt Nam.
 
 Sau khi ấn đăng ký nếu khách hàng chưa nhập ô nào hoặc chưa đúng định dạng thì trang web sẽ báo đỏ ở ô đó kèm tên lỗi.
-![P](Pho/2.1.3.PNG)
+![P](Pho/2.1.3.png)
 
 Khi đăng ký thành công sẽ chuyển sang trang đăng nhập.
 
 ### 2.1.4 Trang Đăng Nhập(/KhachHang/DangNhap)
-![P](Pho/2.1.4.PNG)
+![P](Pho/2.1.4.png)
 
 Chỉ vào được khi chưa đăng nhập.
 
@@ -113,7 +113,7 @@ Bên dưới nút đăng nhập cũng có nút để vào trang đăng ký.
 Khi khách hàng ấn vào nút quên mật khẩu sẽ hiện một hộp thoại thông báo yêu cầu khách hàng gọi vào hotline để được hỗ trợ reset mật khẩu.
 
 ### 2.1.5 Trang Thực đơn(/DoAn)
-![P](Pho/2.1.5.PNG)
+![P](Pho/2.1.5.png)
 
 Ở trung tâm của trang sẽ là danh sách các món ăn được sắp theo mặc định là theo loại món ăn.
 
@@ -126,7 +126,7 @@ Bên trên mục loại món ăn có một thanh tìm kiếm để khách hàng 
 Khi khách hàng muốn đặt món nào thì ấn vào mục thêm vào giỏ hàng, sẽ tự động chuyển sang trang giỏ hàng.
 
 ### 2.1.6 Trang Giỏ Hàng(/Cart/ListCart)
-![P](Pho/2.1.6.PNG)
+![P](Pho/2.1.6.png)
 
 Hiển thị danh sách các món ăn mà khách hàng đã ấn đặt hàng cùng số lượng và  tổng tiền các món ăn đó.
 
@@ -143,7 +143,7 @@ Nếu chưa đăng nhập sẽ tự động chuyển về trang đăng nhập, s
 Nếu đã đăng nhập sẽ chuyển sang trang checkout.
 
 ### 2.1.7 Trang Thanh Toán(/Cart/Checkout)
-![P](Pho/2.1.7.1.PNG)
+![P](Pho/2.1.7.1.png)
 
 Bên phải màn hình sẽ hiển thị danh sách các món ăn đã đặt.
 
@@ -156,13 +156,13 @@ Nếu khách hàng không chọn chi nhánh thì mặc định sẽ là đặt h
 Phương thức thanh toán mặc định là thanh toán khi nhận hàng (COD).
 
 Khách hàng có thể chuyển sang phương chuyển khoản (QR) bằng cách click vào nút quét mã QR bên dưới,lúc này sẽ hiện ra mã QR cho khách hàng quét kèm nội dung hàng cần nhập khi chuyển khoản, nội dung này sẽ được hệ thống tự tạo ra gồm <tên khách hàng> - <mã đơn hàng>.
-![P](Pho/2.1.7.2.PNG)
+![P](Pho/2.1.7.2.png)
 
 Sau khi đặt hàng thành công:
-![P](Pho/2.1.7.3.PNG)
+![P](Pho/2.1.7.3.png)
 
 ### 2.1.8 Trang Thông Tin Khách Hàng(/KhachHang/Profile)
-![P](Pho/2.1.8.PNG)
+![P](Pho/2.1.8.png)
 
 Khách có thể vào trang này thông qua biểu tượng thông tin ngay bên cạnh tên khách hàng
 
@@ -173,7 +173,7 @@ Tên đăng nhập; Họ tên; Giới tính; Ngày sinh; Địa chỉ; Số di�
 Bên dưới có một nút để vào trang  lịch sử mua hàng.
 
 ### 2.1.9 Trang  Lịch Sử Mua Hàng(/KhachHang/LichSu)
-![P](Pho/2.1.9.PNG)
+![P](Pho/2.1.9.png)
 
 Kháng hàng có thể ấn vào biểu tượng lịch sử để xem lịch sử đặt hàng.
 
@@ -182,7 +182,7 @@ Hiển thị danh sách các đơn hàng khách hàng đã mua bao gồm:
 Mã đơn hàng; Chi nhánh đã đặt; Loại thanh toán; Tình trạng đơn hàng; Tổng tiền đơn hàng;
 
 Mỗi đơn hàng có một nút “Xem thêm” để có thể xem chi tiết hóa đơn đó.
-![P](Pho/2.1.9.2.PNG)
+![P](Pho/2.1.9.2.png)
 
 ## 2.2 Trang API
 ![P](Pho/2.2.PNG)
@@ -195,94 +195,94 @@ Chỉ có tài khoản có role_id bằng 0 tức quyền admin mới có thể 
 Các tài khoản quản lý sẽ có role_id bằng với mã chi nhánh mà mình quản lý. Các tài khoản này chỉ có quyền truy cập vào chức năng thống kê và
 
 - Giao diện đăng nhập.
-![P](Pho/2.3.0.1.PNG)
+![P](Pho/2.3.0.1.png)
 
 - Sau khi đăng nhập thành công
-![P](Pho/2.3.0.2.PNG)
+![P](Pho/2.3.0.2.png)
 
 
 - Giao diện đối với tài khoản admin
-![P](Pho/2.3.0.3.PNG)
+![P](Pho/2.3.0.3.png)
 
 - Giao diện đối với tài khoản khác ( tài khoản của quản lý các chi nhánh)
-![P](Pho/2.3.0.4.PNG)
+![P](Pho/2.3.0.4.png)
 
 ### 2.3.1 Trang Quản Lý Tài Khoản Admin
 - Giao diện khi vào trang
-![P](Pho/2.3.1.1.PNG)
+![P](Pho/2.3.1.1.png)
 
 - Giao diện tạo tài khoản cho quản lý của các chi nhánh.
-![P](Pho/2.3.1.2.PNG)
+![P](Pho/2.3.1.2.png)
 
 - Giao diện sửa tài khoản.
-![P](Pho/2.3.1.3.PNG)
+![P](Pho/2.3.1.3.png)
 
 - Giao diện xác nhận xóa tài khoản.
-![P](Pho/2.3.1.4.PNG)
+![P](Pho/2.3.1.4.png)
 
 ### 2.3.2 Trang Quản Lý Chi Nhánh - Gọi API
 - Giao diện khi vào trang
-![P](Pho/2.3.2.1.PNG)
+![P](Pho/2.3.2.1.png)
 
 - Giao diện tạo chi nhánh mới.
-![P](Pho/2.3.2.2.PNG)
+![P](Pho/2.3.2.2.png)
 
 - Giao diện sửa thông tin chi nhánh.
-![P](Pho/2.3.2.3.PNG)
+![P](Pho/2.3.2.3.png)
 
 - Giao diện xác nhận xóa chi nhánh.
-![P](Pho/2.3.2.4.PNG)
+![P](Pho/2.3.2.4.png)
 
 ### 2.3.3 Trang Quản Lý Đơn Hàng - Gọi API
 
 - Tài khoản admin được xem, sửa, xóa đơn hàng của tất cả chi nhánh.
-![P](Pho/2.3.3.1.PNG)
+![P](Pho/2.3.3.1.png)
 
 - Các tài khoản khác có roles là id của chi nhánh nào thì chỉ được phép xem đơn hàng của chi nhánh mà mình quản lý. Ví dụ quản lý của chi nhánh 1:
-![P](Pho/2.3.3.2.PNG)
+![P](Pho/2.3.3.2.png)
 
 - Giao diện xem chi tiết đơn hàng
-![P](Pho/2.3.3.3.PNG)
+![P](Pho/2.3.3.3.png)
 
 - Giao diện chỉnh sửa đơn hàng (chủ yếu để chỉnh sửa tình trạng đơn hàng).
-![P](Pho/2.3.3.4.PNG)
+![P](Pho/2.3.3.4.png)
 
 - Giao diện xác nhận hóa đơn hàng.
-![P](Pho/2.3.3.5.PNG)
+![P](Pho/2.3.3.5.png)
 
 ### 2.3.4 Trang Quản Lý Tài Khoản Khách Hàng(/Customer)
 - Giao diện khi vào trang
-![P](Pho/2.3.4.1.PNG)
+![P](Pho/2.3.4.1.png)
 
 Tại trang danh sách khách hàng, cả 2 nút tìm kiếm tài khoản khách hàng theo username và theo ID nếu tìm thấy đều vào thẳng trang Edit của tài khoản đó. Ấn nút Edit của từng khách hàng cụ thể cũng ra giao diện sửa thông tin tương tự.
 
 - Chức năng này chủ yếu để reset mật khẩu của khách hàng.
-![P](Pho/2.3.4.2.PNG)
+![P](Pho/2.3.4.2.png)
 
 - Tại trang danh sách khách hàng , sau khi ấn nút Create New Customer sẽ vào giao diện tạo tài khoản
-![P](Pho/2.3.4.3.PNG)
+![P](Pho/2.3.4.3.png)
 
 - Tại trang danh sách khách hàng,sau khi ấn nút Delete của khách hàng nào sẽ ra giao diện xác nhận xóa tài khoản của khách hàng đó.
-![P](Pho/2.3.4.4.PNG)
+![P](Pho/2.3.4.4.png)
 
 Tại bất kỳ giao diện nào của trang khách hàng , khi ấn vào “Back to List” sẽ quay về trang danh sách khách hàng
 
 ### 2.3.5 Trang Quản Lý Món Ăn(/Foods/ListFood) - Gọi API
 
 - Chỉ có tài khoản admin đăng nhập mới vào được trang này.
-![P](Pho/2.3.5.1.PNG)
+![P](Pho/2.3.5.1.png)
 
 - Khi nhập tên món ăn vào ô tìm kiếm (VD: bur) các hiển thị danh sách các món ăn có tên chứa từ khóa vừ nhập.
-![P](Pho/2.3.5.2.PNG)
+![P](Pho/2.3.5.2.png)
 
 - Tại trang ListFood, sau khi nhập mã món ăn vào ô tìm kiếm theo ID  món ăn, nếu tồn tại món ăn thì sẽ vào giao diện Edit thông tin của món ăn đó. Ấn vào nút Edit của từng mục món ăn cũng ra được giao diện sửa thông tin tương tự.
-![P](Pho/2.3.5.3.PNG)
+![P](Pho/2.3.5.3.png)
 
 - Tại trang ListFood, sau khi ấn nút Create New sẽ vào giao diện tạo mới món ăn.
-![P](Pho/2.3.5.4.PNG)
+![P](Pho/2.3.5.4.png)
 
 - Tại trang ListFood, sau khi ấn nút Delete của món ăn nào sẽ vào giao diện xác nhận xóa món ăn đó.
-![P](Pho/2.3.5.5.PNG)
+![P](Pho/2.3.5.5.png)
 
 Tại bất kỳ giao diện nào của trang món ăn, sau khi ấn “Back to List” sẽ quay về trang danh sách món ăn.
 
@@ -291,16 +291,16 @@ Tại bất kỳ giao diện nào của trang món ăn, sau khi ấn “Back to 
 Chỉ có tài khoản admin đăng nhập mới vào được trang này.
 
 - Những mã giảm giá nào đã hết hạn sử dụng hoặc chưa tới thời hạn sử dụng hoặc đã hết lượt sử dụng thì khách hàng sẽ không thể nhập và trên trang danh sách mã giảm giá sẽ hiển thị màu đỏ, những mã hợp lệ sẽ hiển thị màu xanh lá.
-![P](Pho/2.3.6.1.PNG)
+![P](Pho/2.3.6.1.png)
 
 - Tại trang ListCoupon sau khi ấn Create New sẽ vào giao diện tạo mã giảm giá.
-![P](Pho/2.3.6.2.PNG)
+![P](Pho/2.3.6.2.png)
 
 - Tại trang ListCoupon sau khi ấn vào nút Edit của mã giảm giá nào sẽ vào giao diện chỉnh sửa của mã giảm giá đó.
-![P](Pho/2.3.6.3.PNG)
+![P](Pho/2.3.6.3.png)
 
 - Tại trang ListCoupon sau khi ấn vào nút Delete của mã giảm giá nào sẽ vào giao diện xác nhận xóa mã giảm giá đó.
-![P](Pho/2.3.6.4.PNG)
+![P](Pho/2.3.6.4.png)
 
 Tại bất kỳ giao diện nào của trang mã giảm giá, sau khi ấn “Back to List” sẽ quay về trang danh sách mã giảm giá.
 
@@ -309,7 +309,7 @@ Tại bất kỳ giao diện nào của trang mã giảm giá, sau khi ấn “B
 Sau khi chọn tháng và năm sẽ hiện doanh thu theo tháng của các chi nhánh trong hệ thống.
 
 - Chỉ những đơn hàng nào có trạng thái đã thanh toán (paid) thì mới được tính vào doanh thu.
-![P](Pho/2.3.7.PNG)
+![P](Pho/2.3.7.png)
 
 # PHẦN 3: KẾT LUẬN
 
